@@ -156,7 +156,7 @@ void procesar_argumentos(argc,argv)
   for (limite = 0; (fgets (buffer, sizeof(buffer), fuente) != NULL);
        ++limite) {
     leidas = sscanf(buffer, "%s%lf%i%s",entrada, &precio, &numero, resto);
-    if (leidas < 3) {
+    if (leidas < 3  || precio<=0 || numero <=0) {
       fprintf (stderr,"El fichero de entrada no es correcto\n");
       exit (1);
     } else {
